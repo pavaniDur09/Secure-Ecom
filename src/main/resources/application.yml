@@ -1,0 +1,40 @@
+server:
+  port: 8081   # change this if 8081 is also busy on your machine
+
+spring:
+  application:
+    name: week9-secure-ecommerce
+
+  # Using H2 (in-memory DB) so the project runs instantly with zero setup.
+  # Swap this block for PostgreSQL later if you want real multi-tenant databases.
+  datasource:
+    url: jdbc:h2:mem:ecommerce;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console   # visit http://localhost:8080/h2-console to inspect the DB
+
+  jpa:
+    hibernate:
+      ddl-auto: update      # auto-creates tables from our @Entity classes
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+# Custom JWT settings - read by JwtTokenProvider
+security:
+  jwt:
+    # In production, load this from an environment variable / secrets manager - never hardcode it.
+    secret: c2VjdXJlLWRlbW8tc2VjcmV0LWtleS1mb3ItSFM1MTItYWxnb3JpdGhtLXBsZWFzZS1yb3RhdGUtbWU=
+    access-token-expiration-ms: 900000      # 15 minutes
+    refresh-token-expiration-ms: 604800000  # 7 days
+
+  # Very simple rate limiting settings (see RateLimitFilter)
+  rate-limit:
+    max-requests: 5
+    window-seconds: 60

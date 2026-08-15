@@ -1,0 +1,33 @@
+{
+  "name": "week9-secure-ecommerce (Java 17 + Maven)",
+
+  // Microsoft's official Java devcontainer image - comes with Java 17, Maven, and Gradle
+  // pre-installed, so anyone who opens this repo in Codespaces gets a working environment
+  // automatically, with zero manual setup.
+  "image": "mcr.microsoft.com/devcontainers/java:17",
+
+  // Recommended VS Code extensions - Codespaces installs these automatically on first open.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "vmware.vscode-spring-boot"
+      ]
+    }
+  },
+
+  // Makes port 8081 (where Spring Boot runs) automatically forwarded and clickable
+  // in the "Ports" tab once the app starts.
+  "forwardPorts": [8081],
+  "portsAttributes": {
+    "8081": {
+      "label": "Spring Boot App",
+      "onAutoForward": "notify"
+    }
+  },
+
+  // Runs once when the Codespace is first created - pre-downloads all Maven
+  // dependencies so the first "mvn spring-boot:run" is fast instead of waiting
+  // to download Spring Boot/Security/JWT jars.
+  "postCreateCommand": "mvn -q dependency:go-offline"
+}

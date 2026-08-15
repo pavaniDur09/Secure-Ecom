@@ -1,4 +1,4 @@
-# Security Test Report — Week 9 Secure E-commerce Platform
+# Security Test Report 
 
 ## Summary
 

@@ -1,10 +1,9 @@
-# Week 9 — Secure E-commerce Platform (Simplified, Beginner-Friendly)
+# Secure E-commerce Platform 
 
-A Spring Boot app implementing JWT auth, role-based access control (RBAC),
-method-level security, simplified multi-tenancy, rate limiting, and audit logging —
-all written in plain, heavily-commented code so it's easy to follow.
+A Spring Boot app implementing JWT auth,
+method-level security, simplified multi-tenancy, rate limiting, and audit logging
 
-## 0. Running in GitHub Codespaces (recommended, zero local setup)
+## Running in GitHub Codespaces (recommended, zero local setup)
 
 This repo includes a `.devcontainer/devcontainer.json`, which tells Codespaces to
 automatically provision Java 17 + Maven for you - no install steps needed.
@@ -18,9 +17,6 @@ automatically provision Java 17 + Maven for you - no install steps needed.
    ```
 4. Watch for a popup/notification in the bottom-right: **"Your application running on port 8081 is available"** — click **Open in Browser**, or check the **Ports** tab
 5. Test it with curl directly in the Codespaces terminal (see section 2 below)
-
-Anyone who opens this repo in Codespaces gets the exact same environment - they don't
-need Java or Maven installed on their own machine at all.
 
 ## 1. Run it locally instead
 

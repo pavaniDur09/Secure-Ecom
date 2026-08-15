@@ -1,5 +1,5 @@
 server:
-  port: 8081   # change this if 8081 is also busy on your machine
+  port: 8081  
 
 spring:
   application:
